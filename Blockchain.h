@@ -4,7 +4,7 @@
 #include <vector>
 #include "Block.h"
 
-using namespace std;
+using namespace std; // shortcut to the standard namespace in C++
 
 class Blockchain {
 public:
@@ -14,9 +14,9 @@ public:
 
 private:
   uint32_t _nDifficulty;
-  vector<Block> _vChain;
+  vector<Block> _vChain; // vector of Block objs
 
-  Block _GetLastBlock() const;
+  Block _GetLastBlock() const; // const ensures output of method cannot be changed
 };
 
 #endif

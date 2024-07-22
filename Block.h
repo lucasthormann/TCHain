@@ -5,9 +5,9 @@ using namespace std;
 
 class Block {
   public:
-    string sPrevHash;
+    string sPrevHash; //Each block is linked to the previous block
     
-    Block(uint32_t nIndexIn, const string &sDataIn);
+    Block(uint32_t nIndexIn, const string &sDataIn); // Const keyword and reference modifier used so that parameters are passed by reference but cannot be changed (improves efficiency and saves mem)
 
     string getHash();
 
@@ -21,5 +21,5 @@ class Block {
     time_t _tTime;
 
 
-    string _CalculateHash() const;
+    string _CalculateHash() const; // const ensures the method cannot change any of the variables in the Block class
 };
