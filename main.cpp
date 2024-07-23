@@ -1,7 +1,7 @@
 #include "Blockchain.h"
 
 int main() {
-  Blockchain bChain = new Blockchain(); // creates a new blockchain
+  Blockchain bChain = Blockchain(); // creates a new blockchain
 
   cout << "Mining block 1..." << endl;
   bChain.AddBlock(Block(1, "Block 1 Data")); // Creates new block and adds it to the chain

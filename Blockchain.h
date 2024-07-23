@@ -1,3 +1,4 @@
+#ifndef TESTCHAIN_BLOCKCHAIN_H
 #define TESTCHAIN_BLOCKCHAIN_H
 
 #include <cstdint>

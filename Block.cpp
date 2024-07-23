@@ -1,12 +1,12 @@
 #include "Block.h"
 #include "sha256.h"
 
-Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sData(sDataIn) { // block constructor copies parameter value into variables 
+Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), sData(sDataIn) { // block constructor copies parameter value into variables 
   _nNonce = -1;
   _tTime = time(nullptr); // set to current time
 }
 
-string Block::GetHash() { // accessor for the blocks hash
+string Block::getHash() { // accessor for the blocks hash
   return _sHash;
 }
 
@@ -32,7 +32,8 @@ void Block::MineBlock(uint32_t nDifficulty) { // pass difficulty determined by t
 inline string Block::_CalculateHash() const { /* inline keyword makes code more efficient as the compiler places 
                                                  the method's instructions inline wherever the method is called 
                                                  (cuts down on seperate method call stringstream ss; */
-  ss << _nIndex << _tTime << _sData << _nNonce << sPrevHash; // create string stream and append values
+  stringstream ss;
+  ss << _nIndex << _tTime << sData << _nNonce << sPrevHash; // create string stream and append values
 
   return sha256(ss.str()); // return output of sha256 method using the string output from the string stream
 

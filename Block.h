@@ -1,5 +1,9 @@
+#ifndef TESTCHAIN_BLOCK_H
+#define TESTCHAIN_BLOCK_H
+
 #include <cstdint>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -23,3 +27,5 @@ class Block {
 
     string _CalculateHash() const; // const ensures the method cannot change any of the variables in the Block class
 };
+
+#endif

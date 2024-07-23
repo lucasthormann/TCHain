@@ -6,11 +6,11 @@ Blockchain::Blockchain() { // Blockchain constructor
 }
 
 void Blockchain::AddBlock(Block bNew) {
-  bNew.sPrevHash = _GetLastBlock().GetHash(); // set previous hash variable for new block to hash of last block
+  bNew.sPrevHash = _GetLastBlock().getHash(); // set previous hash variable for new block to hash of last block
   bNew.MineBlock(_nDifficulty); // block is mined
   _vChain.push_back(bNew); // block is added to vector chain
 }
 
 Block Blockchain::_GetLastBlock() const {
-  return _VChain.back(); // return last block in VChain vector using the vector::back method
+  return _vChain.back(); // return last block in VChain vector using the vector::back method
 }
